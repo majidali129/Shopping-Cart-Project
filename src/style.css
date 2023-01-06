@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Roboto:wght@300;400;500;700&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* #F41A02 red  */
+/* #DECEA6 white  */
+/* #050402 black  */
+/* #F38474 pink  */
+/* #24263B dark blue  */
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/**
+*! Nav start
+**/
+.nav{
+    background-color: #24263B;
+    color:#fff ;
+    padding:3em 5.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: capitalize;
+}
+.cart-status-section{
+    position: relative;
+}
+.cart{
+    background-color: #fff;
+    color: #050402;
+    font-size: 3rem;
+    padding: 0.15em;
+    border-radius: 4px;
+}
+.cart-status{
+    background-color:#F41A02 ;
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    right: -12px;
+    padding: 0.4em 0.3em;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/**
+*! Nav End
+**/
+.product-section{
+    /* border: 1px solid red; */
+    width: 85%;
+    padding: 0em 2em;
+    margin: 3em auto ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.product-container{
+    border: 2.3px solid #1e1d1be1 ;
+    width: 232.4px;
+    border-radius: 5px;
+    margin-bottom: 2.5em;
+}
+.item-description{
+    /* border: 1px solid green; */
+    padding:1.4em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.item-description .item-name{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+.item-description .about-item{
+    font-size: 1.5rem;
+}
+.item-status-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.item-status-container .price{
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+.item-status-container .count{
+    font-size: 2rem;
+}
+.count .less{
+    color:#ee2c0e;
+    font-weight: 200;
+}
+.count .add{
+    color: green;
+    font-weight: 200;
+}
+
