@@ -1,9 +1,12 @@
 let p_section = document.getElementById("product-section");
 
 
+let basket = [];
+
 let buildShop = ()=>{
     return (p_section.innerHTML = shop_data.map((item)=>{
-        let {image,name,description,price,id} = item
+        let {image,name,description,price,id} = item;
+        // let search = basket .find((element)=>{element.id === id}) || [];
         return `
           <div id=product-id-${id} class="product-container">
         <figure class="product-img">
@@ -17,11 +20,11 @@ let buildShop = ()=>{
 
             <div class="count">
                 <span class="less">
-                    <i class="bi bi-dash"></i>
+                    <i class="bi bi-dash" onClick="decrement(${id})"></i>
                 </span> 
                 <span id=${id} class="product-quantity">3</span>
                 <span class="add">
-                    <i class="bi bi-plus"></i>
+                    <i class="bi bi-plus" onClick="increment(${id})"></i>
                 </span>
             </div>
             </div>
@@ -31,4 +34,32 @@ let buildShop = ()=>{
     }));
 }
 
-buildShop()
+buildShop();
+
+
+let increment = (id)=>{
+    let selectedItem = id;
+    let search = basket.find((element)=>element.id===selectedItem.id)
+    if(search === undefined){
+        basket.push(
+            {
+                id : selectedItem.id,
+                item : 1
+            })
+    }else{
+        search.item += 1;
+    }
+    console.log(basket)
+}
+
+
+let decrement = (id)=>{
+    let selectedItem = id;
+    let search = basket.find((element)=>element.id===selectedItem.id)
+    if(search===undefined)return;
+    if(search.item === 0)return;
+    else{
+        search.item -= 1;
+    }
+    console.log(basket)
+}
