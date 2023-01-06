@@ -22,7 +22,7 @@ let buildShop = ()=>{
                 <span class="less">
                     <i class="bi bi-dash" onClick="decrement(${id})"></i>
                 </span> 
-                <span id=${id} class="product-quantity">3</span>
+                <span id=${id} class="product-quantity">0</span>
                 <span class="add">
                     <i class="bi bi-plus" onClick="increment(${id})"></i>
                 </span>
@@ -49,7 +49,8 @@ let increment = (id)=>{
     }else{
         search.item += 1;
     }
-    console.log(basket)
+    updateValue(selectedItem.id)
+    // console.log(basket)
 }
 
 
@@ -61,5 +62,13 @@ let decrement = (id)=>{
     else{
         search.item -= 1;
     }
-    console.log(basket)
+    // console.log(basket)
+    updateValue(selectedItem.id)
+}
+
+
+let updateValue = (id)=>{
+    let search = basket.find((element)=>element.id === id)
+    // console.log(search.item)
+    document.getElementById(id).innerHTML = search.item
 }
