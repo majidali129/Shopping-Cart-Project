@@ -1,30 +1,86 @@
-let shop_data= [
-    {
-        id : 'alkdfslkdjf',
-        name : 'Casual Shirt',
-        price : 1300,
-        image : "images/img-1.jpg",
-        description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, harum! Lorem'
-    },
-      {
-        id : 'alkdfsldkfkdjf',
-        name : 'Office Shirt',
-        price : 500,
-        image : "images/img-2.jpg",
-        description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, harum! Lorem',
-    },
-      {
-        id : 'flskdfslkdjf',
-        name : 'T-Shirt',
-        price : 2000,
-        image : "images/img-3.jpg",
-        description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, harum! Lorem',
-    },
-      {
-        id : 'alkdfslsdlkdjf',
-        name : 'Mens Shirt',
-        price : 2200,
-        image : "images/img-4.jpg",
-        description : 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, harum! Lorem'
-    }
+let shop_data=  [
+  {
+    id: "jfhgbvnscs",
+    name: "Casual Shirt",
+    price: 45,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-1.jpg",
+  },
+  {
+    id: "ioytrhndcv",
+    name: "Office Shirt",
+    price: 100,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-2.jpg",
+  },
+  {
+    id: "wuefbncxbsn",
+    name: "T Shirt",
+    price: 25,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-3.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-4.jpg",
+  },
+  {
+    id: "thiecbawdjksadjk",
+    name: "Mens Tie",
+    price: 25,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-5.png",
+  },
+  {
+    id: "iuertrywebncdjksadjk",
+    name: "Casual shoes",
+    price: 200,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-6.png",
+  },
+  {
+    id: "thierytbvcbvzdhadjk",
+    name: "black suit",
+    price: 450,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-7.png",
+  },
+  {
+    id: "trfoiwfcnbcawdjksadjk",
+    name: "polo shirt",
+    price: 45,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-8.png",
+  },
+  {
+    id: "cbvxbcvsceldk",
+    name: "denim shirt",
+    price: 85,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-9.png",
+  },
+  {
+    id: "oiopijmjkhuihb",
+    name: "denim pants",
+    price: 120,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-10.png",
+  },
+  {
+    id: "oiopijewyiohbjhib",
+    name: "basic cap",
+    price: 35,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-11.png",
+  },
+  {
+    id: "rtytytuyuytyytbvncv",
+    name: "leather boots",
+    price: 350,
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    image: "images/img-12.png",
+  },
 ];

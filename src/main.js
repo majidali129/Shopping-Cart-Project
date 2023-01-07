@@ -10,7 +10,7 @@ let buildShop = ()=>{
         return `
           <div id=product-id-${id} class="product-container">
         <figure class="product-img">
-            <img src=${image} width="228px"  alt="">
+            <img src=${image} width="226px"  alt="">
         </figure>
 
         <div class="item-description">
@@ -29,7 +29,7 @@ let buildShop = ()=>{
         </div>
     </div>
         `
-    }));
+    }).join(''));
 }
 
 buildShop();

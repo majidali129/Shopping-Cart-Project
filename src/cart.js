@@ -108,7 +108,6 @@ let updateValue = (id)=>{
 
 let clearCart = ()=>{
     basket = []
-    console.log("clicked")
     generateCartItem()
     localStorage.setItem('data',JSON.stringify(basket))
 }
