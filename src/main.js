@@ -22,7 +22,9 @@ let buildShop = ()=>{
                 <span class="less">
                     <i class="bi bi-dash" onClick="decrement(${id})"></i>
                 </span> 
-                <span id=${id} class="product-quantity">${search.item}</span>
+                <span id=${id} class="product-quantity">
+                ${search.item===undefined ? 0 : search.item}
+                </span>
                 <span class="add">
                     <i class="bi bi-plus" onClick="increment(${id})"></i>
                 </span>
@@ -50,9 +52,7 @@ let increment = (id)=>{
         search.item += 1;
     }
     updateValue(selectedItem.id)
-    sumValues()
     localStorage.setItem('data',JSON.stringify(basket))
-    // console.log(basket)
 }
 
 
@@ -64,9 +64,8 @@ let decrement = (id)=>{
     else{
         search.item -= 1;
     }
-    // console.log(basket)
     updateValue(selectedItem.id)
-    sumValues()
+    basket = basket.filter((element)=>element.item !==0)
     localStorage.setItem('data',JSON.stringify(basket))
 
 }
@@ -76,12 +75,12 @@ let updateValue = (id)=>{
     let search = basket.find((element)=>element.id === id)
     // console.log(search.item)
     document.getElementById(id).innerHTML = search.item
-    // sumValues()
+    sumValues()
 }
 
 let sumValues = ()=>{
     let totalItems = document.getElementById('cart-status');
-    totalItems.innerHTML =  basket.map((element)=>element.item).reduce((previous , next)=> previous + next)
-    console.log(totalItems)
+    totalItems.innerHTML =  basket.map((element)=>element.item).reduce((x , y)=> x + y,0)
+    // console.log(totalItems)
 }
 sumValues()  // to keep values updated after reload
