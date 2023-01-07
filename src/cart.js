@@ -1,3 +1,5 @@
+let label = document.getElementById('label');
+let shoppingCart = document.getElementById('shopping-cart');
 let basket = JSON.parse(localStorage.getItem("data")) || []
 let sumValues = ()=>{
     let totalItems = document.getElementById('cart-status');
@@ -6,8 +8,6 @@ let sumValues = ()=>{
 }
 sumValues()  // to keep values updated after reload
 
-let label = document.getElementById('label');
-let shoppingCart = document.getElementById('shopping-cart');
 
 
 let generateCartItem = ()=>{
@@ -15,9 +15,9 @@ let generateCartItem = ()=>{
         return(
             shoppingCart.innerHTML = basket.map((element)=>{
                 let {id , item } = element;
-                console.log(element)
+                // console.log(element)
                 let search = shop_data.find((y)=>y.id === id) || [];
-                console.log(search)
+                // console.log(search)
                 return `
                 <div class='cart-item'>
                     <img width="120px" src=${search.image} alt="">
@@ -28,7 +28,7 @@ let generateCartItem = ()=>{
                             <p class='item-name'>${search.name}</p>
                             <p class = "item-price">$ ${search.price}</p>
                         </h2>
-                        <i class="bi bi-x-lg"></i>
+                        <i class="bi bi-x-lg" onClick="removeItem(${id})"></i>
                     </div>
 
                 <div class="buttons">
@@ -44,7 +44,7 @@ let generateCartItem = ()=>{
                 </div>
                 `
             }).join('')
-        )
+        );
     }else{
         shoppingCart.innerHTML = " "
         label.innerHTML = `
@@ -53,7 +53,8 @@ let generateCartItem = ()=>{
        <button class='homeBtn'>Back to Home</button>
        </a>
         `
-    }
+    };
+    sumValues()
 }
 generateCartItem()
 
@@ -73,7 +74,6 @@ let increment = (id)=>{
     updateValue(selectedItem.id)
     localStorage.setItem('data',JSON.stringify(basket))
     generateCartItem()
-
 }
 
 
@@ -89,9 +89,8 @@ let decrement = (id)=>{
     updateValue(selectedItem.id)
     basket = basket.filter((element)=>element.item !==0)
     localStorage.setItem('data',JSON.stringify(basket))
+    sumValues()
     generateCartItem()
-
-
 }
 
 
@@ -101,14 +100,46 @@ let updateValue = (id)=>{
     // console.log(search.item)
     document.getElementById(id).innerHTML = search.item
     sumValues()
+    totalBill()
 }
 
 
 
-// label.innerHTML = `
-// <h1 class='total-bill' id='total-bill'>Total Bill : $ 1000</h1>
-// <div class='btns'>
-// <button class='checkout btn' id='checkOut'>Checkout</button>
-// <button class='clear-cart btn' id='clearCart'>Clear Cart</button>
-// </div>
-// `
+
+let clearCart = ()=>{
+    basket = []
+    console.log("clicked")
+    generateCartItem()
+    localStorage.setItem('data',JSON.stringify(basket))
+}
+
+let removeItem = (id)=>{
+    let selectedItem = id;
+    // console.log(selectedItem)
+    basket = basket.filter((element)=>element.id !== selectedItem.id )
+    generateCartItem()
+    localStorage.setItem('data',JSON.stringify(basket))
+    totalBill()
+    sumValues()
+}
+
+
+
+let totalBill = ()=>{
+    if(basket.length !==0){
+        let amount = basket.map((element)=>{
+            let {id,item} = element;
+            let search = shop_data.find((x)=>x.id === id) || [];
+            return item * search.price;
+        }).reduce((previourValue,nextValue)=>previourValue+nextValue,0);
+        label.innerHTML = `
+<h1 class='total-bill' id='total-bill'>Total Bill : $ ${amount}</h1>
+<div class='btns'>
+<button class='checkout btn' id='checkOut'>Checkout</button>
+<button class='clear-cart btn' id='clearCart' onClick="clearCart()" >Clear Cart</button>
+</div>
+`
+        // console.log(amount)
+    }else return;
+}
+totalBill()
