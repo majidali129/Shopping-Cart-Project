@@ -5,3 +5,23 @@ let sumValues = ()=>{
     // console.log(totalItems)
 }
 sumValues()  // to keep values updated after reload
+
+let label = document.getElementById('label');
+let shoppingCart = document.getElementById('shopping-cart');
+
+
+let generateCartItem = ()=>{
+    if(basket.length !==0 ){
+        return(
+            shoppingCart.innerHTML = basket.map((element)=>{
+                let {id , item } = element;
+                console.log(element)
+                let search = shop_data.find((y)=>y.id === id) || [];
+                console.log(search)
+                return `
+                `
+            })
+        )
+    }
+}
+generateCartItem()
