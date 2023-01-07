@@ -12,24 +12,20 @@ let buildShop = ()=>{
         <figure class="product-img">
             <img src=${image} width="228px"  alt="">
         </figure>
+
         <div class="item-description">
             <div class="item-name">${name}</div>
             <div class="about-item">${description}</div>
-            <div class="item-status-container">
-            <div class="price">$ ${price}</div>
 
-            <div class="count">
-                <span class="less">
-                    <i class="bi bi-dash" onClick="decrement(${id})"></i>
-                </span> 
-                <span id=${id} class="product-quantity">
-                ${search.item===undefined ? 0 : search.item}
-                </span>
-                <span class="add">
-                    <i class="bi bi-plus" onClick="increment(${id})"></i>
-                </span>
+            <div class="item-status-container">
+                    <div class="price">$ ${price}</div>
+                    <div class="buttons">
+                        <span ><i class="bi bi-dash less" onClick="decrement(${id})"></i></span> 
+                        <span id=${id} class="product-quantity">${search.item===undefined ? 0 : search.item}</span>
+                        <span ><i class="bi bi-plus add" onClick="increment(${id})"></i></span>
+                    </div>
             </div>
-            </div>
+
         </div>
     </div>
         `

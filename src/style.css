@@ -100,21 +100,129 @@ i{
 .item-status-container{
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
 }
-.item-status-container .price{
+ .price{
     font-size: 2.3rem;
     font-weight: 700;
 }
-.item-status-container .count{
+ .buttons{
     font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
-.count .less{
+.buttons .bi-dash{
     color:#ee2c0e;
     font-weight: 200;
+    font-size: 2.5rem;
 }
-.count .add{
+.buttons .bi-plus{
     color: green;
     font-weight: 200;
+    font-size: 2.5rem;
 }
 
+
+
+
+
+
+/**
+*! style for label  
+**/
+.label-text-center{
+text-align: center;
+margin-top: 3em;
+}
+.total-bill{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-bottom: 0.4em;
+}
+.btn{
+    margin: 0em 0.3em;
+}
+
+
+/**
+*! style for shopping cart 
+**/
+.shopping-cart{
+    /* border: 2px solid black; */
+    width: 28%;
+    margin:2em auto;
+    border-radius: 5px;
+    /* height: auto; */
+}
+
+/**
+*! style for cart item
+**/
+.cart-item{
+    border: 2px solid #050402d3;
+    margin-bottom: 10px;
+    display: flex;
+    border-radius: 5px;
+}
+.cart-item .detail{
+    /* border: 2px solid green; */
+    width: 230px;
+    margin: 1em auto;
+}
+.detail>.title-price-x{
+    margin:1em auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+.item-name{
+    color: black;
+    font-size: 1.5rem;
+}
+.name-price{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.item-price,
+.checkout,
+.clear-cart,
+.homeBtn{
+    background-color: #24263B;
+    padding: 4.5px;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+.checkout{
+    background-color: green;
+    font-size: 1.5rem;
+}
+.clear-cart{
+    background-color: red;
+    font-size: 1.5rem;
+}
+.homeBtn{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.empty-cart{
+    font-size: 2.5rem;
+}
+.bi-x-lg{
+    color: red;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.item-total-price{
+    /* color: #24263B; */
+    color: black;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
